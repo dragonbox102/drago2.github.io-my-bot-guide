@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grow a Garden Discord Bot Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4; /* Light mode background */
+            color: #333; /* Light mode text color */
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff; /* Light mode container background */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+        }
+        h1, h2 {
+            color: #333; /* Light mode heading color */
+            transition: color 0.3s; /* Smooth transition */
+        }
+        .step {
+            margin-bottom: 20px;
+            border-left: 4px solid #4CAF50;
+            padding-left: 15px;
+            transition: border-color 0.3s; /* Smooth transition */
+        }
+        .command {
+            background-color: #e9e9e9;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+        .screenshot {
+            max-width: 50%; /* Made images much smaller */
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: block; /* Center the image */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .tip {
+            background-color: #e6ffe6;
+            border-left: 4px solid #28a745;
+            padding: 10px 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s; /* Smooth transition */
+        }
+        .confusion-section, .terms-section { /* Added .terms-section */
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border: 1px solid #add8e6;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .confusion-section h2, .terms-section h2 {
+            color: #0056b3;
+        }
+        .confusion-section a, .terms-section a { /* Applied to both sections' links */
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em; /* Make button slightly smaller */
+        }
+        .confusion-section a:hover, .terms-section a:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #282c34; /* Dark mode background */
+            color: #e0e0e0; /* Dark mode text color */
+        }
+        body.dark-mode .container {
+            background: #3a3f4a; /* Dark mode container background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        body.dark-mode h1,
+        body.dark-mode h2 {
+            color: #ffffff; /* Dark mode heading color */
+        }
+        body.dark-mode .step {
+            border-left-color: #61afef; /* Dark mode border color for steps */
+        }
+        body.dark-mode .command {
+            background-color: #4b5263; /* Dark mode command background */
+            color: #abb2bf;
+        }
+        body.dark-mode .tip {
+            background-color: #4b5263;
+            border-left-color: #98c379;
+            color: #e0e0e0;
+        }
+        body.dark-mode .confusion-section, body.dark-mode .terms-section {
+            background-color: #1a202c;
+            border-color: #2c3e50;
+        }
+        body.dark-mode .confusion-section h2, body.dark-mode .terms-section h2 {
+            color: #add8e6;
+        }
+        body.dark-mode .confusion-section a, body.dark-mode .terms-section a {
+            background-color: #61afef;
+        }
+        body.dark-mode .confusion-section a:hover, body.dark-mode .terms-section a:hover {
+            background-color: #528cbf;
+        }
+
+        /* Dark Mode Button Styles */
+        #darkModeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000; /* Ensure it stays on top */
+        }
+        #darkModeToggle:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button id="darkModeToggle"></button>
+
+    <div class="container">
+        <h1>Grow a Garden Discord Bot Guide</h1>
+        <p>This guide will walk you through the steps to set up and use the Grow a Garden Discord bot on your server.</p>
+
+        <div class="step">
+            <h2>Step 1: Invite the Bot to Your Discord Server</h2>
+            <p>The first thing you need to do is invite the "Grow a Garden stocks" bot to your Discord server. When you invite the bot, you'll see a screen similar to this, asking for permissions:</p>
+            <img src="images/Screenshot 2025-07-09 154835.png" alt="Bot Invitation Screen" class="screenshot">
+            <p>Make sure you select the server you want to add it to and confirm the necessary permissions (Add a bot to a server, Create commands).</p>
+        </div>
+
+        <div class="step">
+            <h2>Step 2: Check Bot Permissions and Setup</h2>
+            <p>Once the bot is in your server, you need to ensure it has all the necessary permissions. Use the <code class="command">/status</code> command to check:</p>
+            <img src="images/Screenshot 2025-07-09 154920.png" alt="Status Command Output - Initial" class="screenshot">
+            <p>As you can see, the permissions (Manage Roles, Send Messages, Use External Emojis, Embed Links) should all have green checkmarks. If any are missing, you may need to adjust the bot's role permissions in your server settings.</p>
+            <p>After confirming the permissions, you'll use the <code class="command">/setupbot</code> command. This command will automatically create the necessary roles for seeds, gears, and eggs, which the bot uses for stock updates.</p>
+            <img src="images/Screenshot 2025-07-09 155006.png" alt="Setup Bot Command Output" class="screenshot">
+            <p>The bot will confirm that the setup is complete and list the existing roles it has processed.</p>
+        </div>
+
+        <div class="step">
+            <h2>Step 3: Set Up Stock Update Channels</h2>
+            <p>Now, you need to configure the specific channels where the bot will post stock updates. You will use three separate commands for this:</p>
+            <ul>
+                <li>Use <code class="command">/setchannel</code> for general seed stock updates.</li>
+                <li>Use <code class="command">/seteggshop</code> for egg shop updates.</li>
+                <li>Use <code class="command">/setgearshop</code> for gear shop updates.</li>
+            </ul>
+            <p>Here's how it looks when you set these channels:</p>
+            <img src="images/Screenshot 2025-07-09 155109.png" alt="Set Channels Command Output" class="screenshot">
+            <p>Once you've successfully used these commands, the bot will confirm that each channel has been set.</p>
+        </div>
+
+        <div class="step">
+            <h2>Step 4: Verify Your Configuration</h2>
+            <p>To ensure you have correctly configured all the channels, you can use the <code class="command">/status</code> command again. This will display a comprehensive overview of the bot's current configuration, including the channels you just set:</p>
+            <img src="images/Screenshot 2025-07-09 155247.png" alt="Status Command Output - Final" class="screenshot">
+            <p>Look under "Configured Channels" to confirm that your chosen channels (e.g., #seed-stocks, #gear-stocks, #egg-stocks) are correctly listed. If everything looks good, your Grow a Garden bot is now fully set up and ready to provide stock updates!</p>
+        </div>
+
+        <div class="step">
+            <h2>Step 5: Get Pinged for Specific Stock Updates!</h2>
+            <p>To receive notifications (pings) for specific item stock updates (like a particular seed, egg, or gear), you'll need to assign yourself the corresponding item's role that the bot created during setup.</p>
+            <p>For example, if you want to be pinged when "Grape" seeds are in stock, you need to get the "Grape" role.</p>
+
+            <h3>How to Get Specific Item Roles:</h3>
+            <p>Your Discord server might have "Customisation Questions" or a similar onboarding process to help you select roles:</p>
+            <img src="images/Screenshot 2025-07-09 160650.png" alt="Customisation Questions for Roles" class="screenshot">
+            <p>Or you might find a dedicated "roles" channel where you can click reactions to gain roles for various items:</p>
+            <img src="images/Screenshot 2025-07-09 160711.png" alt="Examples of Item Roles" class="screenshot">
+            <p class="tip">
+                Look for roles named after specific seeds (e.g., "Pepper Seed", "Cacao"), eggs, or gears. Assign yourself the roles for the items you want to be notified about! If your server has Discord's built-in **Onboarding**, it's usually the easiest way to pick your preferred roles.
+            </p>
+        </div>
+
+        <div class="confusion-section">
+            <h2>Still Confused?</h2>
+            <p>Don't worry! We understand that sometimes things can be a bit tricky. If this guide was too much, we have a super-simplified version just for you!</p>
+            <a href="simple_bot_guide.html">Click Here for the Super Simple Guide!</a>
+        </div>
+
+        <div class="terms-section">
+            <p>It's important to understand the rules.</p>
+            <a href="https://shorturl.at/QK1Pg" target="_blank">Read the Terms of Service for the Bot</a>
+        </div>
+
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Function to update button text
+        function updateButtonText() {
+            if (body.classList.contains('dark-mode')) {
+                toggleButton.textContent = 'Toggle Light Mode';
+            } else {
+                toggleButton.textContent = 'Toggle Dark Mode';
+            }
+        }
+
+        // Check for user preference in local storage
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Check if the user's system prefers dark mode
+            body.classList.add('dark-mode');
+        }
+
+        // Initialize button text based on initial theme
+        updateButtonText();
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            // Save the preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                localStorage.removeItem('theme'); // Remove if back to light
+            }
+
+            // Update button text after toggle
+            updateButtonText();
+        });
+    </script>
+</body>
+</html>

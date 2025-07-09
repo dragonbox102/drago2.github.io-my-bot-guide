@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Simple Grow a Garden Bot Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        h1, h2 {
+            color: #333;
+            transition: color 0.3s;
+        }
+        .step {
+            margin-bottom: 20px;
+            border-left: 4px solid #f39c12; /* A more "simple" orange/yellow color */
+            padding-left: 15px;
+            transition: border-color 0.3s;
+        }
+        .command {
+            background-color: #e9e9e9;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+        .screenshot {
+            max-width: 50%; /* Made images much smaller */
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: block; /* Center the image */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .info-box {
+            background-color: #fffacd;
+            border-left: 4px solid #daa520;
+            padding: 10px 15px;
+            margin-top: 15px;
+            border-radius: 5px;
+        }
+        .back-button-container, .terms-section-simple { /* Combined button container styles */
+            text-align: center;
+            margin-top: 30px;
+        }
+        .back-button-container a, .terms-section-simple a {
+            display: inline-block;
+            background-color: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9em; /* Make button slightly smaller */
+        }
+        .back-button-container a:hover, .terms-section-simple a:hover {
+            background-color: #5a6268;
+        }
+
+
+        /* Dark Mode Styles for Simple Guide */
+        body.dark-mode {
+            background-color: #282c34;
+            color: #e0e0e0;
+        }
+        body.dark-mode .container {
+            background: #3a3f4a;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        body.dark-mode h1,
+        body.dark-mode h2 {
+            color: #ffffff;
+        }
+        body.dark-mode .step {
+            border-left-color: #ffc107; /* Dark mode simple guide border */
+        }
+        body.dark-mode .command {
+            background-color: #4b5263;
+            color: #abb2bf;
+        }
+        body.dark-mode .info-box {
+            background-color: #5c4b2b;
+            border-left-color: #ffd700;
+            color: #e0e0e0;
+        }
+        body.dark-mode .back-button-container a, body.dark-mode .terms-section-simple a {
+            background-color: #7289da; /* Discord blue */
+        }
+        body.dark-mode .back-button-container a:hover, body.dark-mode .terms-section-simple a:hover {
+            background-color: #5f73c6;
+        }
+
+        /* Dark Mode Button Styles (reused from main guide) */
+        #darkModeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        #darkModeToggle:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <button id="darkModeToggle"></button>
+
+    <div class="container">
+        <h1>Super Simple Grow a Garden Bot Guide for Everyone!</h1>
+        <p>This is the easiest guide to get your Grow a Garden bot working. Just follow these steps!</p>
+
+        <div class="step">
+            <h2>1. Invite the Bot</h2>
+            <p>Get the bot into your Discord server. An admin needs to click "Invite" and pick the server.</p>
+            <img src="images/Screenshot 2025-07-09 154835.png" alt="Bot Invitation Screen" class="screenshot">
+        </div>
+
+        <div class="step">
+            <h2>2. Set Up the Bot</h2>
+            <p>In Discord, type <code class="command">/setupbot</code> and hit enter. This makes important roles.</p>
+            <img src="images/Screenshot 2025-07-09 155006.png" alt="Setup Bot Command Output" class="screenshot">
+            <p>Then, type <code class="command">/status</code> to check if everything looks good (permissions should be green checks).</p>
+            <img src="images/Screenshot 2025-07-09 154920.png" alt="Status Command Output - Initial" class="screenshot">
+        </div>
+
+        <div class="step">
+            <h2>3. Tell Bot Where to Post</h2>
+            <p>Tell the bot which channels to use for updates:</p>
+            <ul>
+                <li>For general seed updates: Type <code class="command">/setchannel</code> (and pick a channel).</li>
+                <li>For egg shop updates: Type <code class="command">/seteggshop</code> (and pick a channel).</li>
+                <li>For gear shop updates: Type <code class="command">/setgearshop</code> (and pick a channel).</li>
+            </ul>
+            <img src="images/Screenshot 2025-07-09 155109.png" alt="Set Channels Command Output" class="screenshot">
+        </div>
+
+        <div class="step">
+            <h2>4. All Done!</h2>
+            <p>Type <code class="command">/status</code> one more time to see your setup. Your channels should be listed!</p>
+            <img src="images/Screenshot 2025-07-09 155247.png" alt="Status Command Output - Final" class="screenshot">
+        </div>
+
+        <div class="step">
+            <h2>5. Get Pings!</h2>
+            <p>If you want notifications for specific seeds, eggs, or gears, you need to get their special roles.</p>
+            <p>Your server might ask you questions to get roles:</p>
+            <img src="images/Screenshot 2025-07-09 160650.png" alt="Customisation Questions for Roles" class="screenshot">
+            <p>Or you might click reactions in a "roles" channel to get roles like "Grape" or "Mushroom":</p>
+            <img src="images/Screenshot 2025-07-09 160711.png" alt="Examples of Item Roles" class="screenshot">
+        </div>
+
+        <div class="back-button-container">
+            <p>Feeling better? You can go back to the full guide if you want more details.</p>
+            <a href="garden_bot_guide.html">Go Back to Detailed Guide</a>
+        </div>
+
+        <div class="terms-section-simple">
+            <p>Please review the bot's terms.</p>
+            <a href="https://shorturl.at/QK1Pg" target="_blank">Read the Terms of Service for the Bot</a>
+        </div>
+
+    </div>
+
+    <script>
+        const toggleButton = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Function to update button text
+        function updateButtonText() {
+            if (body.classList.contains('dark-mode')) {
+            toggleButton.textContent = 'Toggle Light Mode';
+            } else {
+                toggleButton.textContent = 'Toggle Dark Mode';
+            }
+        }
+
+        // Check for user preference in local storage
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            body.classList.add(currentTheme);
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // Check if the user's system prefers dark mode
+            body.classList.add('dark-mode');
+        }
+
+        // Initialize button text based on initial theme
+        updateButtonText();
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            // Save the preference
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark-mode');
+            } else {
+                localStorage.removeItem('theme'); // Remove if back to light
+            }
+
+            // Update button text after toggle
+            updateButtonText();
+        });
+    </script>
+</body>
+</html>
